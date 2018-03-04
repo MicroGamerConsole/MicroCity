@@ -9,9 +9,17 @@
 #define pgm_read_word(x) (*((uint16_t*)x))
 #define pgm_read_ptr(x) (*((uintptr_t*)x))
 #define strlen_P(x) strlen(x)
-#else
+#elif defined(__AVR__)
 #include <avr/pgmspace.h>
 //#define pgm_read_ptr pgm_read_word
+#else
+ #include <stdint.h>
+ #include <string.h>
+ #define PROGMEM
+ #define pgm_read_byte(x) (*((uint8_t*)x))
+ #define pgm_read_word(x) (*((uint16_t*)x))
+ #define pgm_read_ptr(x) (*((uintptr_t*)x))
+ #define strlen_P(x) strlen(x)
 #endif
 
 #define TILE_SIZE 8
@@ -41,10 +49,10 @@
 #define MAX_BUILDINGS 130
 
 // How long a button has to be held before the first event repeats
-#define INPUT_REPEAT_TIME 10
+#define INPUT_REPEAT_TIME 2
 
 // When repeating, how long between each event is fired
-#define INPUT_REPEAT_FREQUENCY 2
+#define INPUT_REPEAT_FREQUENCY 1
 
 #define BULLDOZER_COST 1
 #define ROAD_COST 10

@@ -1,5 +1,5 @@
 #include <Arduboy2.h>
-#include <EEPROM.h>
+//#include <EEPROM.h>
 #include "Draw.h"
 #include "Interface.h"
 #include "Game.h"
@@ -63,38 +63,38 @@ void DrawBitmap(const uint8_t* bmp, uint8_t x, uint8_t y, uint8_t w, uint8_t h)
 
 void SaveCity()
 {
-  uint16_t address = EEPROM_STORAGE_SPACE_START;
-
-  // Add a header so we know that the EEPROM contains a saved city
-  EEPROM.update(address++, 'C'); 
-  EEPROM.update(address++, 'T'); 
-  EEPROM.update(address++, 'Y'); 
-  EEPROM.update(address++, '1'); 
-
-  uint8_t* ptr = (uint8_t*) &State;
-  for(size_t n = 0; n < sizeof(GameState); n++)
-  {
-    EEPROM.update(address++, *ptr);
-    ptr++;
-  }
+//  uint16_t address = EEPROM_STORAGE_SPACE_START;
+//
+//  // Add a header so we know that the EEPROM contains a saved city
+//  EEPROM.update(address++, 'C'); 
+//  EEPROM.update(address++, 'T'); 
+//  EEPROM.update(address++, 'Y'); 
+//  EEPROM.update(address++, '1'); 
+//
+//  uint8_t* ptr = (uint8_t*) &State;
+//  for(size_t n = 0; n < sizeof(GameState); n++)
+//  {
+//    EEPROM.update(address++, *ptr);
+//    ptr++;
+//  }
 }
 
 bool LoadCity()
 {
-  uint16_t address = EEPROM_STORAGE_SPACE_START;
-
-  if(EEPROM.read(address++) != 'C') return false;
-  if(EEPROM.read(address++) != 'T') return false;
-  if(EEPROM.read(address++) != 'Y') return false;
-  if(EEPROM.read(address++) != '1') return false;
-
-  uint8_t* ptr = (uint8_t*) &State;
-  for(size_t n = 0; n < sizeof(GameState); n++)
-  {
-    *ptr = EEPROM.read(address++);
-    ptr++;
-  }
-
+//  uint16_t address = EEPROM_STORAGE_SPACE_START;
+//
+//  if(EEPROM.read(address++) != 'C') return false;
+//  if(EEPROM.read(address++) != 'T') return false;
+//  if(EEPROM.read(address++) != 'Y') return false;
+//  if(EEPROM.read(address++) != '1') return false;
+//
+//  uint8_t* ptr = (uint8_t*) &State;
+//  for(size_t n = 0; n < sizeof(GameState); n++)
+//  {
+//    *ptr = EEPROM.read(address++);
+//    ptr++;
+//  }
+//
   return true;
 }
 

@@ -3,6 +3,7 @@
 #include "Interface.h"
 #include "Font.h"
 #include "Strings.h"
+#include "Defines.h"
 
 const uint8_t TileImageData[] PROGMEM =
 {
