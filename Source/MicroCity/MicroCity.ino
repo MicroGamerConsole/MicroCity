@@ -117,6 +117,7 @@ void setup()
   arduboy.systemButtons();
   arduboy.bootLogo();
   arduboy.setFrameRate(25);
+  arduboy.enableDoubleBuffer();
 
   InitGame();
 }
