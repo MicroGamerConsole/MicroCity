@@ -1,11 +1,11 @@
-#include <Arduboy2.h>
+#include <MicroGamer.h>
 #include <MicroGamerMemoryCard.h>
 #include "Draw.h"
 #include "Interface.h"
 #include "Game.h"
 #include "Simulation.h"
 
-Arduboy2Base arduboy;
+MicroGamerBase arduboy;
 MicroGamerMemoryCard mem(sizeof(GameState) / 4 + 1);
 
 uint8_t GetInput()
