@@ -12,11 +12,11 @@ uint8_t GetInput()
 {
   uint8_t result = 0;
 
-  if(arduboy.pressed(A_BUTTON))
+  if(arduboy.pressed(Y_BUTTON))
   {
     result |= INPUT_A;
   }
-  if(arduboy.pressed(B_BUTTON))
+  if(arduboy.pressed(X_BUTTON))
   {
     result |= INPUT_B;
   }
